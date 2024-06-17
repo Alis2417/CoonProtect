@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 
-function header() {
+function AppHeader() {
   return (
     <div className="App">
       <header className="App-header">
@@ -22,4 +22,4 @@ function header() {
   );
 }
 
-export default header;
+export default AppHeader;
