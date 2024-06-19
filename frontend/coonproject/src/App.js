@@ -3,36 +3,45 @@ import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import MainPage from './pages/main';
 import AppHeader from './components/app-header';
+import RegisterPage from './pages/register';
+import NewsPage from './pages/news';
+import AboutPage from './pages/about';
+import ContactsPage from './pages/contacts';
+import LoginPage from './pages/login';
+import CoursesPage from './pages/courses';
 
 function App() {
   const router =  createBrowserRouter([
     {
       path: "/",
-      element: <MainPage />,
       children: [
         {
-          path: "courses",
+          path: "",
           element: <MainPage />,
+        },
+        {
+          path: "courses",
+          element: <CoursesPage/>,
         },
         {
           path: "news",
-          element: <MainPage />,
+          element: <NewsPage />,
         },
         {
           path: "about",
-          element: <MainPage />,
+          element: <AboutPage />,
         },
         {
           path: "contacts",
-          element: <MainPage />,
+          element: <ContactsPage />,
         },
         {
           path: "login",
-          element: <MainPage />,
+          element: <LoginPage />,
         },
         {
           path: "register",
-          element: <MainPage />,
+          element: <RegisterPage />,
         },
       ],
     },
