@@ -9,6 +9,7 @@ import AboutPage from './pages/about';
 import ContactsPage from './pages/contacts';
 import LoginPage from './pages/login';
 import CoursesPage from './pages/courses';
+import ProfilePage from './pages/profile';
 
 function App() {
   const router =  createBrowserRouter([
@@ -42,6 +43,10 @@ function App() {
         {
           path: "register",
           element: <RegisterPage />,
+        },
+        {
+          path: "profile",
+          element: <ProfilePage />,
         },
       ],
     },

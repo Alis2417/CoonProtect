@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: center;
     padding-top: 1rem;
+    border-bottom: 1px solid #F4EEEE; 
 }
 .app-header__menu{
     display: flex;
