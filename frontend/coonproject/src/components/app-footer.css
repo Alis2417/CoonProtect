@@ -1,0 +1,14 @@
+
+.app-footer{
+    display: fle;
+    background-color:#1E89E3 ;
+    color: white;
+  
+  
+}
+.app-footer__bottom-panel{
+    border-top: 1px solid #F4EEEE;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between ;
+}

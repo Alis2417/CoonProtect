@@ -1,0 +1,21 @@
+.profile-card {
+    margin-top:4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    height: 20rem;
+  
+}
+.profile-card__short-info {
+    width: 20rem;
+    height: 100%;
+    border: 1px solid #c8c8c8;
+    border-radius: 1rem;
+}
+.profile-card__form {
+    width: 40rem;
+    height: 100%;
+    border: 1px solid #c8c8c8;
+    border-radius: 1rem;
+}
