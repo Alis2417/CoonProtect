@@ -1,10 +1,17 @@
+import CourseCard from './components/course-card';
 
 function CoursesPage() {
-  return (
-    <div className="App">
-      Courses Page
-    </div>
-  );
+    return (
+        <div className="courses-page">
+            <CourseCard
+                title="Пример курса"
+                text="Узнай о том, какими способами могут обмануть мошенники и как этому противостоять, а также прокачай свои навыки в финансовой грамотности"
+                percent={50}
+                inProccess={false}
+                disable={true}
+            />
+        </div>
+    );
 }
 
 export default CoursesPage;
