@@ -1,0 +1,31 @@
+.main-page{
+    display: flex;
+    background-image: url(/src/imgs/woman.png);
+    background-size: cover;
+    background-position: center;
+    height: 700px;
+    align-items: center;
+    position: relative;
+}
+.main-page_content{
+    position: absolute;
+    display: flex;
+    left: 204px;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+.main-page_container{
+    color: #fff;
+    text-align: left;
+    max-width: 715px;
+}
+.main-page_container h1{
+    font-size: 64px;
+    font-family: "Inter", sans-serif;
+    margin-bottom: 1rem;
+}
+.main-page_container p{
+    font-size: 24px;
+    font-family: "Inter", sans-serif;
+}
