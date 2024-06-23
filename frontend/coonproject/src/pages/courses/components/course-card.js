@@ -3,23 +3,19 @@ import './course-card.css';
 
 function CourseCard({ title, text, percent, disable = false, inProccess = false }) {
     return (
-        <div
-            className={`course-card ${disable ? 'disabled' : ''} ${
-                inProccess ? 'course-card--inProgress' : ''
-            }`}
-        >
+        <div className={`course-card ${disable ? 'disabled' : ''} ${inProccess ? 'course-card--inProgress' : ''}`}>
             <div className="course-card__header">{title}</div>
             <div className="course-card__content">
                 <div>{text}</div>
             </div>
             <div className="course-card__footer">
                 <div className="course-card__type-education">
-                    <div>для всех пользователей</div>
+                    <div style={{ width: '49.9%' }}>для всех пользователей</div>
                     <div>онлайн-обучение</div>
                 </div>
                 <div>
                     <button className={`course-card__button ${inProccess ? 'course-card__button--inProgress' : ''}`}>
-                        Подробнее
+                        {inProccess ? 'Продолжить' : 'Подробнее'}
                     </button>
                 </div>
 
