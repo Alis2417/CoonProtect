@@ -1,0 +1,18 @@
+.course-content {
+    display: flex;
+    max-width: 1920px;
+    justify-content: space-between;
+}
+
+.sidebar {
+    width: 25%;
+    padding: 10px;
+   
+    background-color: #DCF5FE;
+}
+
+.main-content {
+    width: 70%;
+    padding: 10px;
+    background-color: #DCF5FE;
+}

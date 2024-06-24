@@ -10,6 +10,7 @@ import ContactsPage from './pages/contacts';
 import LoginPage from './pages/login';
 import CoursesPage from './pages/courses';
 import ProfilePage from './pages/profile';
+import KeisPage from './pages/keis';
 
 function App() {
   const router =  createBrowserRouter([
@@ -47,6 +48,10 @@ function App() {
         {
           path: "profile",
           element: <ProfilePage />,
+        },
+        {
+          path: "keis",
+          element: <KeisPage />,
         },
       ],
     },
