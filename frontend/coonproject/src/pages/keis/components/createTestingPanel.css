@@ -1,0 +1,62 @@
+.testing-panel {
+    margin: 0 auto;
+    padding: 20px;
+ 
+    border-radius: 5px;
+   
+}
+
+.testing-panel h2 {
+    font-size: 1.5rem;
+    margin-top: -1rem;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.testing-panel form {
+    margin-top: 20px;
+}
+
+.testing-panel form button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.testing-panel form button:hover {
+    background-color: #0056b3;
+}
+
+.testing-panel form button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.testing-panel .question-container {
+    margin-bottom: 15px;
+
+}
+
+.testing-panel label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.testing-panel input[type="checkbox"] {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.testing-panel .correct-answer {
+    color: green;
+    font-weight: bold;
+}
+
+.testing-panel .incorrect-answer {
+    color: red;
+    font-weight: bold;
+}

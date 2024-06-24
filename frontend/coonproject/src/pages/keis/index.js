@@ -1,55 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import "./keis-page.style.css";
+import TestingPanel from './components/createTestingPanel';
+import './keis-page.style.css';
 
 // Компонент для рендеринга урока
 function LessonPanel({ htmlContent, onComplete }) {
     return (
         <div className="lesson-panel">
             <div dangerouslySetInnerHTML={{ __html: htmlContent }}></div>
-            <button onClick={onComplete}>Mark Lesson as Completed</button>
+            <button onClick={onComplete}>Пометить как пройденое</button>
         </div>
     );
 }
 
-// Компонент для рендеринга теста
-function TestingPanel({ testData, onComplete, onCheckAnswers }) {
-    const [answers, setAnswers] = useState({});
 
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setAnswers((prevAnswers) => ({
-            ...prevAnswers,
-            [name]: value
-        }));
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        onCheckAnswers(answers);
-        onComplete();
-    };
-
-    return (
-        <div className="testing-panel">
-            <form onSubmit={handleSubmit}>
-                <div dangerouslySetInnerHTML={{ __html: testData }}></div>
-                <input
-                    type="text"
-                    name="question1"
-                    onChange={handleInputChange}
-                    placeholder="Answer question 1"
-                />
-                <input
-                    type="text"
-                    name="question2"
-                    onChange={handleInputChange}
-                    placeholder="Answer question 2"
-                />
-                <button type="submit">Submit</button>
-            </form>
-        </div>
-    );
-}
 
 // Основной компонент курса
 function KeisPage() {
@@ -60,7 +23,7 @@ function KeisPage() {
 
     // Загрузка прогресса из localStorage
     useEffect(() => {
-        const savedProgress = JSON.parse(localStorage.getItem('courseProgress'+data.id));
+        const savedProgress = JSON.parse(localStorage.getItem('courseProgress' + data.id));
         if (savedProgress) {
             setCompletedLessons(savedProgress.completedLessons || []);
             setCurrentLesson(savedProgress.currentLesson || null);
@@ -70,8 +33,11 @@ function KeisPage() {
 
     // Сохранение прогресса в localStorage
     useEffect(() => {
-        const progress = { completedLessons, currentLesson, testResults };
-        localStorage.setItem('courseProgress'+data.id, JSON.stringify(progress));
+        // Проверяем, что хотя бы одно из полей (completedLessons, currentLesson, testResults) не пустое
+        if (completedLessons.length > 0 || currentLesson !== null || Object.keys(testResults).length > 0) {
+            const progress = { completedLessons, currentLesson, testResults };
+            localStorage.setItem('courseProgress' + data.id, JSON.stringify(progress));
+        }
     }, [completedLessons, currentLesson, testResults]);
 
     const markAsCompleted = (id) => {
@@ -86,14 +52,14 @@ function KeisPage() {
 
     const handleCheckAnswers = (answers) => {
         const currentLessonData = data.modules
-            .flatMap(module => module.lessons)
-            .find(lesson => lesson.id === currentLesson);
+            .flatMap((module) => module.lessons)
+            .find((lesson) => lesson.id === currentLesson);
 
         if (currentLessonData && currentLessonData.type === 'test') {
             // Здесь можно добавить логику проверки ответов
             const correctAnswers = {
-                question1: "Правильный ответ",
-                question2: "Правильный ответ"
+                question1: 'Правильный ответ',
+                question2: 'Правильный ответ',
             };
 
             let results = {};
@@ -103,7 +69,7 @@ function KeisPage() {
 
             setTestResults((prevResults) => ({
                 ...prevResults,
-                [currentLesson]: results
+                [currentLesson]: results,
             }));
         }
     };
@@ -112,8 +78,8 @@ function KeisPage() {
     const completedPercentage = Math.round((completedLessons.length / totalLessons) * 100);
 
     const currentLessonData = data.modules
-        .flatMap(module => module.lessons)
-        .find(lesson => lesson.id === currentLesson);
+        .flatMap((module) => module.lessons)
+        .find((lesson) => lesson.id === currentLesson);
 
     return (
         <div className="keis-page">
@@ -127,7 +93,7 @@ function KeisPage() {
                             {module.lessons.map((lesson) => (
                                 <div key={lesson.id} className="lesson-or-test">
                                     <h3 onClick={() => handleLessonClick(lesson.id)} style={{ cursor: 'pointer' }}>
-                                        {lesson.title} {completedLessons.includes(lesson.id) && ' (Completed)'}
+                                        {lesson.title} {completedLessons.includes(lesson.id) && ' (Пройдено)'}
                                     </h3>
                                 </div>
                             ))}
@@ -143,9 +109,9 @@ function KeisPage() {
                             />
                         ) : (
                             <TestingPanel
-                                testData={currentLessonData.data}
+                                title={currentLessonData.title}
+                                testData={currentLessonData.questions}
                                 onComplete={() => markAsCompleted(currentLessonData.id)}
-                                onCheckAnswers={handleCheckAnswers}
                             />
                         )
                     ) : (
@@ -167,7 +133,7 @@ const courseData = {
             title: 'Основы JavaScript',
             lessons: [
                 {
-                    id: 0,
+                    id: 20,
                     title: 'Введение в JavaScript',
                     type: 'lesson',
                     data: '<h3>Введение в JavaScript</h3><p>JavaScript - это язык программирования, используемый для создания динамических веб-страниц.</p>',
@@ -177,12 +143,6 @@ const courseData = {
                     title: 'Переменные и типы данных',
                     type: 'lesson',
                     data: '<h3>Переменные и типы данных</h3><p>В JavaScript есть несколько типов данных: строки, числа, объекты и др.</p>',
-                },
-                {
-                    id: 2,
-                    title: 'Контрольные вопросы по основам',
-                    type: 'test',
-                    data: '<label>Что такое переменная в JavaScript? <input type="text" name="question1" /></label><br/><label>Какие типы данных вы знаете? <input type="text" name="question2" /></label>',
                 },
             ],
         },
@@ -201,12 +161,6 @@ const courseData = {
                     title: 'Объекты и массивы',
                     type: 'lesson',
                     data: '<h3>Объекты и массивы</h3><p>Объекты и массивы - это структуры данных, используемые для хранения коллекций значений.</p>',
-                },
-                {
-                    id: 5,
-                    title: 'Практика по функциям и объектам',
-                    type: 'test',
-                    data: '<label>Напишите функцию, которая принимает два числа и возвращает их сумму. <input type="text" name="question1" /></label><br/><label>Как создать объект в JavaScript? <input type="text" name="question2" /></label>',
                 },
             ],
         },
@@ -230,7 +184,27 @@ const courseData = {
                     id: 8,
                     title: 'Контрольные вопросы по продвинутым темам',
                     type: 'test',
-                    data: '<label>Что такое промисы в JavaScript? <input type="text" name="question1" /></label><br/><label>Как вызвать API с помощью fetch? <input type="text" name="question2" /></label>',
+                    questions: [
+                        {
+                            question: 'Что такое замыкание (closure) в JavaScript?',
+                            options: [
+                                'Это объект в JavaScript',
+                                'Это функция, которая запоминает своё лексическое окружение',
+                                'Это способ создания циклов в JavaScript'
+                            ],
+                            correctAnswer: 'Это функция, которая запоминает своё лексическое окружение'
+                        },
+                        {
+                            question: 'Какие основные принципы работы сети TCP/IP?',
+                            options: [
+                                'Многоуровневая структура протоколов',
+                                'Правила оформления HTML',
+                                'Основы математики'
+                            ],
+                            correctAnswer: 'Многоуровневая структура протоколов'
+                        }
+                    ]
+                
                 },
             ],
         },
