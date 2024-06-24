@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './keis-page.style.css';
+import "./keis-page.style.css";
 
 // Компонент для рендеринга урока
 function LessonPanel({ htmlContent, onComplete }) {
@@ -12,11 +12,20 @@ function LessonPanel({ htmlContent, onComplete }) {
 }
 
 // Компонент для рендеринга теста
-function TestingPanel({ testData, onComplete }) {
+function TestingPanel({ testData, onComplete, onCheckAnswers }) {
+    const [answers, setAnswers] = useState({});
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setAnswers((prevAnswers) => ({
+            ...prevAnswers,
+            [name]: value
+        }));
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Логика обработки отправки формы
-        console.log('Test submitted');
+        onCheckAnswers(answers);
         onComplete();
     };
 
@@ -24,6 +33,18 @@ function TestingPanel({ testData, onComplete }) {
         <div className="testing-panel">
             <form onSubmit={handleSubmit}>
                 <div dangerouslySetInnerHTML={{ __html: testData }}></div>
+                <input
+                    type="text"
+                    name="question1"
+                    onChange={handleInputChange}
+                    placeholder="Answer question 1"
+                />
+                <input
+                    type="text"
+                    name="question2"
+                    onChange={handleInputChange}
+                    placeholder="Answer question 2"
+                />
                 <button type="submit">Submit</button>
             </form>
         </div>
@@ -35,21 +56,23 @@ function KeisPage() {
     const data = courseData;
     const [completedLessons, setCompletedLessons] = useState([]);
     const [currentLesson, setCurrentLesson] = useState(null);
+    const [testResults, setTestResults] = useState({});
 
     // Загрузка прогресса из localStorage
     useEffect(() => {
-        const savedProgress = JSON.parse(localStorage.getItem('courseProgress'));
+        const savedProgress = JSON.parse(localStorage.getItem('courseProgress'+data.id));
         if (savedProgress) {
             setCompletedLessons(savedProgress.completedLessons || []);
             setCurrentLesson(savedProgress.currentLesson || null);
+            setTestResults(savedProgress.testResults || {});
         }
     }, []);
 
     // Сохранение прогресса в localStorage
     useEffect(() => {
-        const progress = { completedLessons, currentLesson };
-        localStorage.setItem('courseProgress', JSON.stringify(progress));
-    }, [completedLessons, currentLesson]);
+        const progress = { completedLessons, currentLesson, testResults };
+        localStorage.setItem('courseProgress'+data.id, JSON.stringify(progress));
+    }, [completedLessons, currentLesson, testResults]);
 
     const markAsCompleted = (id) => {
         if (!completedLessons.includes(id)) {
@@ -61,22 +84,46 @@ function KeisPage() {
         setCurrentLesson(id);
     };
 
+    const handleCheckAnswers = (answers) => {
+        const currentLessonData = data.modules
+            .flatMap(module => module.lessons)
+            .find(lesson => lesson.id === currentLesson);
+
+        if (currentLessonData && currentLessonData.type === 'test') {
+            // Здесь можно добавить логику проверки ответов
+            const correctAnswers = {
+                question1: "Правильный ответ",
+                question2: "Правильный ответ"
+            };
+
+            let results = {};
+            for (const [key, value] of Object.entries(answers)) {
+                results[key] = value === correctAnswers[key];
+            }
+
+            setTestResults((prevResults) => ({
+                ...prevResults,
+                [currentLesson]: results
+            }));
+        }
+    };
+
     const totalLessons = data.modules.reduce((acc, module) => acc + module.lessons.length, 0);
     const completedPercentage = Math.round((completedLessons.length / totalLessons) * 100);
 
     const currentLessonData = data.modules
-        .flatMap((module) => module.lessons)
-        .find((lesson) => lesson.id === currentLesson);
+        .flatMap(module => module.lessons)
+        .find(lesson => lesson.id === currentLesson);
 
     return (
-        <div className="course">
-            <p>Progress: {completedPercentage}%</p>
+        <div className="keis-page">
             <div className="course-content">
                 <div className="sidebar">
                     <h1>{data.title}</h1>
+                    <p>Progress: {completedPercentage}%</p>
                     {data.modules.map((module) => (
-                        <li key={module.id} className="module">
-                            <h2>{module.title}</h2>
+                        <div key={module.id} className="module">
+                            <h2>• {module.title}</h2>
                             {module.lessons.map((lesson) => (
                                 <div key={lesson.id} className="lesson-or-test">
                                     <h3 onClick={() => handleLessonClick(lesson.id)} style={{ cursor: 'pointer' }}>
@@ -84,7 +131,7 @@ function KeisPage() {
                                     </h3>
                                 </div>
                             ))}
-                        </li>
+                        </div>
                     ))}
                 </div>
                 <div className="main-content">
@@ -98,6 +145,7 @@ function KeisPage() {
                             <TestingPanel
                                 testData={currentLessonData.data}
                                 onComplete={() => markAsCompleted(currentLessonData.id)}
+                                onCheckAnswers={handleCheckAnswers}
                             />
                         )
                     ) : (
