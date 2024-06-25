@@ -1,34 +1,61 @@
 import React from 'react';
 import './course-card.css';
+import profileCard from "../../profile/components/profile-card";
+import { IconAdd } from "../Icons";
 
-function CourseCard({ title, text, percent, disable = false, inProccess = false }) {
-    return (
-        <div className={`course-card ${disable ? 'disabled' : ''} ${inProccess ? 'course-card--inProgress' : ''}`}>
-            <div className="course-card__header">{title}</div>
-            <div className="course-card__content">
-                <div>{text}</div>
-            </div>
-            <div className="course-card__footer">
-                <div className="course-card__type-education">
-                    <div style={{ width: '49.9%' }}>для всех пользователей</div>
-                    <div>онлайн-обучение</div>
-                </div>
-                <div>
-                    <button className={`course-card__button ${inProccess ? 'course-card__button--inProgress' : ''}`}>
-                        {inProccess ? 'Продолжить' : 'Подробнее'}
-                    </button>
-                </div>
+function CourseCard(props) {
+    const {
+      title,
+      progress,
+      lessons,
+      akHours,
+      type,
+      visibility,
+      description,
+      inProccess = false,
+      disabled,
+      isTemplate,
+      templateText,
+      onClick,
+      onAddCourse,
+    } = props
 
-                {inProccess && (
-                    <>
-                        <div>Пройдено {percent}% из 100</div>
-                        <div className="progress-bar-container">
-                            <div className="progress-bar" style={{ width: `${percent}%` }}></div>
-                        </div>
-                    </>
-                )}
-            </div>
+    if (isTemplate) {
+      return (
+        <div className='course-card course-card__template' onClick={onAddCourse}>
+          <IconAdd />
+          <span>{templateText}</span>
         </div>
+      )
+    }
+    return (
+      <div className={`course-card ${disabled ? 'disabled' : ''} ${inProccess ? 'course-card--inProgress' : ''}`}>
+        <div className="course-card__header">{title}</div>
+        <div className="course-card__wrapper">
+          <div className="course-card__content">
+            <div>{description}</div>
+          </div>
+          <div className="course-card__footer">
+            <div className="course-card__type-education">
+              <div>для всех пользователей</div>
+              <div>онлайн-обучение</div>
+            </div>
+            <div>
+              <button className={`course-card__button ${inProccess ? 'course-card__button--inProgress' : ''}`} onClick={onClick}>
+                {inProccess ? 'Продолжить' : 'Подробнее'}
+              </button>
+            </div>
+            {inProccess && (
+              <div className="course-card__progress">
+                <div>Пройдено {progress}% из 100</div>
+                <div className="progress-bar-container">
+                  <div className="progress-bar" style={{width: `${progress}%`}}></div>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
     );
 }
 
