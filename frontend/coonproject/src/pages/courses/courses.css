@@ -1,0 +1,19 @@
+.courses-page {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.courses-page-card__row {
+    display: flex;
+    margin-top: 60px;
+    gap: 20px;
+}
+
+.courses-page-card__row > *:first-child {
+    width: 33.33%;
+    min-width: 33.33%;
+}
+.courses-page-card__row > *:last-child {
+    flex-grow: 1;
+}
