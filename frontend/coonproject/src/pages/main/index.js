@@ -28,6 +28,22 @@ function MainPage() {
       <img src={Picture} alt="Cyber Security Course"/>
       </div>
     </div>
+    <div class="courses-container">
+      <div class="course-card large">
+        <img src="../../imgs/Rectangle.png" alt="Курсы ИБ"/>
+        <div class="overlay">Курсы ИБ</div>
+      </div>
+      <div class="course-card small">
+        <div class="overlay">Сoциальная инженерия</div>
+      </div>
+      <div class="course-card small">
+        <div class="overlay">IoT Security</div>
+      </div>
+      <div class="course-card large blue">
+        <div class="overlay">Подобрать курс</div>
+      </div>
+    </div>
+
     </>
   );
 }
