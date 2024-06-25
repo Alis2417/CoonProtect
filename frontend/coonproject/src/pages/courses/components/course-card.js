@@ -7,8 +7,6 @@ function CourseCard(props) {
     const {
       title,
       progress,
-      lessons,
-      akHours,
       type,
       visibility,
       description,
@@ -37,8 +35,8 @@ function CourseCard(props) {
           </div>
           <div className="course-card__footer">
             <div className="course-card__type-education">
-              <div>для всех пользователей</div>
-              <div>онлайн-обучение</div>
+              <div>{visibility}</div>
+              <div>{type}</div>
             </div>
             <div>
               <button className={`course-card__button ${inProccess ? 'course-card__button--inProgress' : ''}`} onClick={onClick}>

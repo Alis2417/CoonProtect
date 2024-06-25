@@ -15,6 +15,7 @@ function CoursesPage() {
                   inProccess={course.progress < 100}
                   disabled={course.disabled}
                   type={course.type}
+                  visibility={course.visibility}
                   onClick={() => console.log('click')}
                 />
                 <CourseProgressCard
