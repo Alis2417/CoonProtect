@@ -1,6 +1,5 @@
 import React from 'react';
 import './course-card.css';
-import profileCard from "../../profile/components/profile-card";
 import { IconAdd } from "../Icons";
 
 function CourseCard(props) {
