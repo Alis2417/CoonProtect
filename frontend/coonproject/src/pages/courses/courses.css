@@ -4,6 +4,35 @@
     margin-right: auto;
 }
 
+.courses-page__tabs {
+    display: flex;
+    gap: 40px;
+    margin-top: 100px;
+}
+
+.courses-page__tab {
+    border-radius: 20px;
+    min-width: 270px;
+    min-height: 40px;
+    color: #5E5D5D;
+    background-color: white;
+    border: 1px solid #5E5D5D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.courses-page__tab a {
+    text-decoration: none;
+    color: unset;
+}
+
+.courses-page__tab-active {
+    border-color: #1E89E3;
+    color: #1E89E3;
+    pointer-events: none;
+}
+
 .courses-page-card__row {
     display: flex;
     margin-top: 60px;
