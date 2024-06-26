@@ -3,6 +3,9 @@ import Picture from '../../imgs/Picture.png'
 import Thumbs from '../../imgs/thumbs-up.png'
 import Heart from '../../imgs/heart.png'
 import List from '../../imgs/list-checks.png'
+import Basic from '../../imgs/basic.png'
+import Gosusligi from '../../imgs/gosusligi.png'
+import Fish from '../../imgs/fish.png'
 
 function MainPage() {
   return (<>
@@ -10,7 +13,7 @@ function MainPage() {
       <div class="main-page_content">
       <div class="main-page_container">
       <h1>Безопасность данных в твоих руках</h1> 
-      <p>Пройди бесплатный курс по информационной безопасности и защити свои данные от мошенников</p>
+      <p class="explane">Пройди бесплатный курс по информационной безопасности и защити свои данные от мошенников</p>
       </div>
       </div>
     </div>
@@ -51,6 +54,33 @@ function MainPage() {
         <p>Полученные знания будет легко применять на практике — ты сможешь грамотно  противостоять кибератакам мошенников</p>
       </div>
       </div>
+    </div>
+    <div class="news-secure">
+      <h1>Новости в сфере ИБ</h1>
+      <div class="news-feeds">
+        <div class="news-feed">
+        <img src={Basic} alt="Basic" />
+        <div class="news-feed-time">
+          <h2>02 мая 2024 - 20:52</h2>
+        </div>
+        <p class="inf">С днём рождения, BASIC! Языку программирования исполнилось 60 лет</p>
+        </div>
+        <div class="news-feed">
+        <img src={Gosusligi} alt="Gosuslugi" />
+        <div class="news-feed-time">
+          <h2>03 мая 2024 - 18:23</h2>
+        </div>
+        <p class="inf">На Госуслугах запустят пилот платформы согласий для финрынка</p>
+        </div>
+        <div class="news-feed">
+        <img src={Fish} alt="Fish" />
+        <div class="news-feed-time">
+          <h2>27 апреля 2024 - 19:59</h2>
+        </div>
+        <p class="inf">Фишеры завлекают пособием на Госуслугах и подсовывают Android-трояна</p>
+        </div>
+      </div>
+      <button class="more-news">Все новости</button>
     </div>
 
     </>
