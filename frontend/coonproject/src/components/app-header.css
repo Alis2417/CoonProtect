@@ -3,15 +3,15 @@
     align-items: center;
     justify-content: center;
     padding-top: 1rem;
-    border-bottom: 1px solid #F4EEEE; 
+    border-bottom: 1px solid #F4EEEE;
 }
 .app-header__menu{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-   
+
     width: 100%;
-    max-width: 1920px;
+    max-width: 1200px;
 }
 
 .app-header__navigation{
