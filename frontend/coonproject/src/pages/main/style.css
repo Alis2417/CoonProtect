@@ -11,8 +11,8 @@
     position: relative;
     display: flex;
     max-width: 100%;
-    padding-left: 204px;
-    padding-right: 204px;
+    padding-left: 12.75rem;
+    padding-right: 12.75rem;
     width: 100%;
     height: 100%;
     align-items: center;
@@ -23,16 +23,20 @@
     max-width: 715px;
     align-items: center;
     justify-content: center;
-    padding-top: 1rem;
+    padding-top: 17rem;
 }
 .main-page_container h1{
     font-size: 4rem;
     font-family: "Inter", sans-serif;
-    margin-bottom: 1rem;
+    margin-bottom: 30px;
+    font-weight: 400;
+    margin-top: 0;
 }
 .main-page_container p{
     font-size: 1.5rem;
     font-family: "Inter", sans-serif;
+    font-weight: 400;
+    margin-top: 0;
 }
 .explane{
     font-size: 1.5rem;
@@ -42,21 +46,25 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 50px 20px;
-    padding-left: 204px;
-    padding-right: 204px;
+    padding-left: 12.75rem;
+    padding-right: 12.75rem;
+    margin-top: 6.25rem;
 }
 .text-content {
     flex: 1;
-    
+    max-width: 94.5rem;
 }
 .text-content h2 {
     font-size: 4rem;
     margin-bottom: 1rem;
+    font-weight: 400;
+    margin-top: 0;
+    flex-basis: 49.8125rem;
 }
 .text-content ul {
     list-style-type: disc;
     margin-bottom: 1rem;
+    margin-top: 0;
 }
 .text-content li {
     font-size: 1.5rem;
@@ -78,9 +86,15 @@ button {
     border-radius: 20px;
 }
 .secondary-btn {
-    background-color: #f1f1f1;
-    color: #333;
+    margin: 0px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #fff;
+    color: #000;
+    border: none;
     border-radius: 20px;
+    cursor: pointer;
+    border: 1px solid #000;
 }
 .image-content {
     flex: 1;
@@ -93,10 +107,10 @@ button {
 .project-benefits{
     max-width: 100%;
     margin: 0 auto;
-    padding: 20px;
     text-align: center;
-    padding-left: 204px;
-    padding-right: 204px;
+    padding-left: 12.75rem;
+    padding-right: 12.75rem;
+    margin-top: 6.25rem;
 }
 .project-benefits h1{
     font-size: 64px;
@@ -104,16 +118,21 @@ button {
     margin-top: 50px;
     margin-bottom: 20px;
     text-align: left;
+    max-width: 1103px;
+    margin-top: 0;
 }
 .project-benefits p{
     font-size: 24px;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
     text-align: left;
+    max-width: 1103px;
+    margin-top: 0;
 }
 .benefits{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    
 }
 .benefit{
     background: #F5F5F5;
@@ -134,23 +153,24 @@ button {
     font-size: 14px;
 }
 .news-secure{
-    padding-left: 204px;
-    padding-right: 204px;
+    padding-left: 12.75rem;
+    padding-right: 12.75rem;
+    margin-top: 6.25rem;
 }
 .news-secure h1{
     width: 100%;
     margin-top: 50px;
     font-size: 64px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     text-align: left;
     font-weight: 500;
+    margin-top: 0;
 }
 .news-feeds{
     display: flex;
     justify-content: space-between;
     gap: 20px;
     text-align: left;
-    flex-wrap: wrap;
 }
 .news-feed{
     display: grid;
@@ -193,5 +213,51 @@ button {
     border: none;
     border-radius: 20px;
     cursor: pointer;
-    border: 2px solid #1E89E3;
+    border: 1px solid #1E89E3;
+    margin-top: 3.75rem;
+}
+.products{
+    padding-left: 12.75rem;
+    padding-right: 12.75rem;
+    margin-top: 6.25rem;
+}
+.container-course {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.course-card {
+    position: relative;
+    color: #fff;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.course-card.large {
+    grid-column: span 3;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.course-card.small {
+    height: 145px;
+}
+.course-card.blue {
+    background-color: #1e88e5;
+    grid-column: span 4;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.products_title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

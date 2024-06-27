@@ -4,6 +4,8 @@
     justify-content: center;
     padding-top: 1rem;
     border-bottom: 1px solid #F4EEEE;
+    padding-left: 12.75rem;
+    padding-right: 12.75rem;
 }
 .app-header__menu{
     display: flex;
