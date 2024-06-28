@@ -13,7 +13,7 @@
     align-items: center;
 
     width: 100%;
-    max-width: 1200px;
+    
 }
 
 .app-header__navigation{
@@ -21,8 +21,14 @@
     align-items: flex-end;
     gap:1rem;
 }
+.app-header__navigation a:hover{
+    color: #1E89E3;
+}
 .app-header a{
     text-decoration: none;
     font-size: 16px;
     color: black;
+}
+.app-header a:hover{
+    color: #1E89E3;
 }

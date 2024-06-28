@@ -6,6 +6,10 @@ import List from '../../imgs/list-checks.png'
 import Basic from '../../imgs/basic.png'
 import Gosusligi from '../../imgs/gosusligi.png'
 import Fish from '../../imgs/fish.png'
+import Baner1 from '../../imgs/Baner1.png'
+import Baner2 from '../../imgs/Baner2.png'
+import Baner3 from '../../imgs/Baner3.png'
+import Button from '../../imgs/Button.png'
 
 function MainPage() {
   return (<>
@@ -34,26 +38,31 @@ function MainPage() {
       <img src={Picture} alt="Cyber Security Course"/>
       </div>
     </div>
+
     <div class="products">
-        <div class="container-course">
-          <div class="course-card large">
-          <img src={Picture} alt="Cyber Security Course"/>
-          <div className="products_title">Курсы ИБ</div>
-          </div>
-          <div class="course-card small">
-          <img src={Picture} alt="Cyber Security Course"/>
-          <div className="products_title">Социальная инженерия</div>
-          </div>
-          <div class="course-card small">
-          <img src={Picture} alt="Cyber Security Course"/>
-            <div className="products_title">IoT Security</div>
-          </div>
-          <div class="course-card large blue">
-          <img src={Picture} alt="Cyber Security Course"/>
-          <div className="products_title">Подобрать курс</div>
-          </div>
-        </div>
+
+    <div class="container">
+      <div class="banner banner1">
+      <img src={Baner1} alt="Курсы ИБ"/>
+      
       </div>
+      <div class="banner banner2">
+      <img src={Baner2} alt="Социальная инженерия"/>
+      
+      </div>
+      <div class="banner banner3">
+      <img src={Baner3} alt="IoT Security"/>
+      
+      </div>
+      <div class="button">
+      <img src={Button} alt="Подобрать курс"/>
+      
+      </div>
+
+      </div>
+
+      </div>
+      
     <div class="project-benefits">
       <h1>О проекте и  его преимуществах</h1>
       <p>Проект создан в целях повышения знаний в области информационной безопасности и направлен на минимизацию кибератак на пользователей сети Интернет</p>

@@ -3,6 +3,7 @@ import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import MainPage from './pages/main';
 import AppHeader from './components/app-header';
+import AppFooter from './components/app-footer';
 import RegisterPage from './pages/register';
 import NewsPage from './pages/news';
 import AboutPage from './pages/about';
@@ -61,6 +62,7 @@ function App() {
     <div className="App">
       <AppHeader></AppHeader>
       <RouterProvider router={router} />
+      <AppFooter></AppFooter>
     </div>
   );
 }
