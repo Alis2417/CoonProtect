@@ -63,7 +63,7 @@ function MainPage() {
 
       </div>
       
-    <div class="project-benefits">
+    <div class="project-benefits" id="project-benefits">
       <h1>О проекте и  его преимуществах</h1>
       <p>Проект создан в целях повышения знаний в области информационной безопасности и направлен на минимизацию кибератак на пользователей сети Интернет</p>
       <div class="benefits">

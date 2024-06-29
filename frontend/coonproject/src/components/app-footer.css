@@ -1,20 +1,19 @@
 
-.footer {
-    width: 100%;
-    color: #1E89E3;
-    padding: 50px 20px;
-}
-
 .footer-content {
-    max-width: 1000px;
+    max-width: 900px;
     margin-top: 80px;
+    height: auto;
+    padding-top: 5rem;
 }
 
 .footer-content h2 {
+    width: 100%;
+    margin-top: 0;
     font-size: 64px;
-    margin-bottom: 30px;
-    font-weight: 400;
-    margin-top: 100px;
+    margin-bottom: 50px;
+    text-align: left;
+    font-weight: 500;
+    
 }
 
 .footer-content p {

@@ -1,3 +1,4 @@
+/* Блок 1 */
 .main-page{
     display: flex;
     background-image: url(/src/imgs/woman.png);
@@ -42,6 +43,7 @@
     font-size: 1.5rem;
     font-family: "Inter", sans-serif;
 }
+/* Блок 2 */
 .features-section {
     display: flex;
     align-items: center;
@@ -56,14 +58,14 @@
 }
 .text-content h2 {
     font-size: 4rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.875rem;
     font-weight: 400;
     margin-top: 0;
     flex-basis: 49.8125rem;
 }
 .text-content ul {
     list-style-type: disc;
-    margin-bottom: 1rem;
+    margin-bottom: 3.5rem;
     margin-top: 0;
 }
 .text-content li {
@@ -74,7 +76,7 @@
     margin-top: 20px;
 }
 button {
-    margin: 0 10px;
+    margin: 0 10px 0 0;
     padding: 10px 20px;
     font-size: 1rem;
     border: none;
@@ -84,6 +86,13 @@ button {
     background-color: #007BFF;
     color: white;
     border-radius: 20px;
+}
+.primary-btn:hover {
+    background-color:#002ead;
+    transition: 0.5s;
+}
+.primary-btn:active {
+    background-color: #2BB3EE;
 }
 .secondary-btn {
     margin: 0px auto;
@@ -97,13 +106,13 @@ button {
     border: 1px solid #000;
 }
 .image-content {
-    flex: 1;
     text-align: left;
 }
 .image-content img {
     max-width: 100%;
     height: auto;
 }
+/* Блок с преимуществами */
 .project-benefits{
     max-width: 100%;
     margin: 0 auto;
@@ -132,26 +141,26 @@ button {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    
 }
 .benefit{
     background: #F5F5F5;
-    padding: 20px;
+    padding: 72px 92px;
     flex: 1;
     text-align: center;
 }
 .benefit img{
-    width: 50px;
-    height: 50px;
+    width: 90px;
+    height: 90px;
     margin-bottom: 10px;
 }
 .benefit h2{
-    font-size: 18px;
-    margin-bottom: 10px;
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 .benefit p{
-    font-size: 14px;
+    font-size: 24px;
 }
+/* Блок новости */
 .news-secure{
     padding-left: 12.75rem;
     padding-right: 12.75rem;
@@ -191,7 +200,6 @@ button {
     margin-bottom: 10px;
     color: #C8C8C8;
 }
-
 .inf{
     font-size: 24px;
     color: black;
@@ -211,6 +219,7 @@ button {
     border: 1px solid #1E89E3;
     margin-top: 3.75rem;
 }
+/* Блок 3 Курсы */
 .products{
     padding-left: 12.75rem;
     padding-right: 12.75rem;

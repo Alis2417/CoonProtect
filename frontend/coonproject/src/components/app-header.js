@@ -13,7 +13,7 @@ function AppHeader() {
 
                     <a href="news">Новости</a>
 
-                    <a href="about">О проекте</a>
+                    <a href="#project-benefits">О проекте</a>
 
                     <a href="contacts">Контакты</a>
                 </nav>
