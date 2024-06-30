@@ -11,11 +11,11 @@ function AppHeader() {
                 <nav className="app-header__navigation">
                     <a href="courses">Курсы</a>
 
-                    <a href="news">Новости</a>
+                    <a href="#news-secure">Новости</a>
 
                     <a href="#project-benefits">О проекте</a>
 
-                    <a href="contacts">Контакты</a>
+                    <a href="#app-footer">Контакты</a>
                 </nav>
                 <div className="app-header__auth">
                     <a href="login">Вход / Регистрация</a>

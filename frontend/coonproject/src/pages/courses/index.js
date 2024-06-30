@@ -3,6 +3,7 @@ import { CourseProgressCard } from './components/CourseProgressCard';
 import './courses.css';
 import { courses } from './mock';
 import { Link, useLocation, useMatch } from "react-router-dom";
+import AppFooter from "../../components/app-footer";
 
 const tabs = [
   {
@@ -62,7 +63,9 @@ function CoursesPage() {
                   templateText='У вас больше нет курсов, если хотите пройти еще один, выберете из каталога'
                 />
             </div>
+            
         </div>
+        
     );
 }
 

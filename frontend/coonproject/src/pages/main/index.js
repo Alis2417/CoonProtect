@@ -10,6 +10,7 @@ import Baner1 from '../../imgs/Baner1.png'
 import Baner2 from '../../imgs/Baner2.png'
 import Baner3 from '../../imgs/Baner3.png'
 import Button from '../../imgs/Button.png'
+import AppFooter from "../../components/app-footer";
 
 function MainPage() {
   return (<>
@@ -56,7 +57,6 @@ function MainPage() {
       </div>
       <div class="button">
       <img src={Button} alt="Подобрать курс"/>
-      
       </div>
 
       </div>
@@ -84,7 +84,7 @@ function MainPage() {
       </div>
       </div>
     </div>
-    <div class="news-secure">
+    <div class="news-secure" id="news-secure">
       <h1>Новости в сфере ИБ</h1>
       <div class="news-feeds">
         <div class="news-feed">
@@ -111,6 +111,8 @@ function MainPage() {
       </div>
       <button class="more-news">Все новости</button>
     </div>
+
+    <AppFooter></AppFooter>
 
     </>
   );

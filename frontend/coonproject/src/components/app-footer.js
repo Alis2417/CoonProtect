@@ -2,7 +2,7 @@ import './app-footer.css';
 
 function AppFooter() {
     return (
-        <footer className="app-footer">
+        <footer className="app-footer" id="app-footer">
             <div class="footer-content">
             <h2>Не пропусти ничего важного в сфере ИБ</h2>
             <p>
