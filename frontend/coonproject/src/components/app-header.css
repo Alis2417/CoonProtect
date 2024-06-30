@@ -6,6 +6,7 @@
     border-bottom: 1px solid #F4EEEE;
     padding-left: 12.75rem;
     padding-right: 12.75rem;
+
 }
 .app-header__menu{
     display: flex;
@@ -20,6 +21,7 @@
     display: flex;
     align-items: flex-end;
     gap:1rem;
+    
 }
 .app-header__navigation a:hover{
     color: #1E89E3;
@@ -31,4 +33,51 @@
 }
 .app-header a:hover{
     color: #1E89E3;
+}
+
+.dropdown {
+    position: relative;
+    z-index: 999;
+}
+.dropdown__toggle{
+    background-color: white;
+    border: 1px solid #F4EEEE;
+    width: 100%;
+}
+
+.dropdown__menu {
+    width: 100%;
+    display: none;
+    position: absolute;
+    background: white;
+    border: 1px solid #CCC;
+    border-top:none;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown__menu li {
+    padding: 8px 16px;
+    border-top: 1px solid #C8C8C8;
+}
+
+.dropdown__menu li a {
+    text-decoration: none;
+    color: black;
+}
+
+.dropdown:hover .dropdown__menu {
+    display: block;
+}
+.dropdown__avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.dropdown__arrow {
+    font-size: 12px;
 }
