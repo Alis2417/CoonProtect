@@ -5,17 +5,85 @@
     justify-content: center;
     gap: 1rem;
     height: 20rem;
-  
+    
+}
+.profile-card__logo{
+    width: 200px ;
+    height: 200px ;
+    text-align: center;
+    
 }
 .profile-card__short-info {
     width: 20rem;
     height: 100%;
     border: 1px solid #c8c8c8;
     border-radius: 1rem;
+    text-align: center;
 }
 .profile-card__form {
     width: 40rem;
     height: 100%;
     border: 1px solid #c8c8c8;
     border-radius: 1rem;
+    padding: 20px;
+    
+}
+.profile-info {
+    text-align: center;
+}
+.form-container{
+    flex: 1 1;
+}
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.form-item {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.form-item:last-child {
+    margin-right: 0;
+}
+
+.form-item label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-item input {
+    width: calc(100% - 10px);
+    padding: 8px;
+    border: 1px solid #e0e0e0;
+    border-radius: 2rem;
+}
+
+.form-item .change-password {
+    display: inline-block;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #000;
+    text-decoration: none;
+}
+.buttons {
+    margin-top: 20px;
+    float: right;
+}
+.secondary {
+    margin: 0px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #fff;
+    color: #007bff;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    border: 1px solid #007bff;
+}
+
+.secondary:hover {
+    background-color: #0056b3;
 }

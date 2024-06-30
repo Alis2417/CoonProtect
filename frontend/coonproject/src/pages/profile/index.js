@@ -5,7 +5,7 @@ function ProfilePage() {
     return (
         <div className="App">
            <ProfileCard></ProfileCard>
-           <AppFooter></AppFooter>
+           
         </div>
     );
 }
