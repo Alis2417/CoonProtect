@@ -1,18 +1,16 @@
 function Validation(values){
     let error = {}
-    const name_pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     const password_pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[z-zA-Z0-9]{8,}$/
 
+    /*Name*/ 
     if(values.name === "") {
         error.name = "Введите имя"
-    }
-    else if(!name_pattern.test(values.name)) {
-        error.name = "Имя не совпадает"
     }
     else {
         error.name = ""
     }
 
+    /*Password*/ 
     if(values.password === "") {
         error.password = "Введите пароль"
     }

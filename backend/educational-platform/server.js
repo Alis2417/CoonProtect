@@ -14,11 +14,13 @@ const db = mysql.createConnection({
 
 })
 
-app.post('/signup', (req, res) => {
-    const sql = "INSERT INTO login (`name`, `password`) VALUES (?)";
+app.post('/coonprotect', (req, res) => {
+    const sql = "INSERT INTO login (`name`, `email`, `password`, `password_re`) VALUES (?)";
     const values = [
         req.body.name,
-        req.body.password
+        req.body.email,
+        req.body.password,
+        req.body.password_re
     ]
     db.query(sql, [values], (err, data) => {
         if(err) {

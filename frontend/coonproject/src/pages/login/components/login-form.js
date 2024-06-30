@@ -2,11 +2,10 @@ import './login-form.css';
 import logo from '../../../imgs/LogoWithoutColor.png';
 import Validation from './loginValidation.js';
 import React, { useState } from "react";
-import axios from 'axios'
 
 function LoginForm() {
     const [values, setValues] = useState({
-        name: '',
+        name: '', 
         password: ''
     })
 
@@ -19,11 +18,6 @@ function LoginForm() {
     const handleSubmit = (event) => {
         event.preventDefault();
         setErrors(Validation(values));
-        if(errors.name === "" && errors.password === "") {
-            axios.post('http://localhost:8081/login-form', values)
-            .then(res => console.log(res))
-            .catch(err => console.log(err));
-        }
 
     }
 
@@ -35,11 +29,11 @@ function LoginForm() {
             <label>Введите логин и пароль в форме ниже</label>
             <div className='login-form__inputs'>
             <label>Имя</label>
-            <input onchange={handleInput} name='name'></input>
+            <input onChange={handleInput} name='name'></input>
             {errors.name && <span className='text-danger'> {errors.name} </span>}
             <br></br>
             <label>Пароль*</label>
-            <input type={'password'} onchange={handleInput} name='password'></input>
+            <input type={'password'} onChange={handleInput} name='password'></input>
             {errors.password && <span className='text-danger'> {errors.password} </span>}
             </div>
             <button type='submit' className='login-form__button-submit'>Войти</button>
