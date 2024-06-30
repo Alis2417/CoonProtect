@@ -2,6 +2,7 @@ import React from 'react';
 import './course-card.css';
 import { IconAdd } from "../Icons";
 
+
 function CourseCard(props) {
     const {
       title,

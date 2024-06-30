@@ -15,9 +15,10 @@ import KeisPage from './pages/keis';
 function App() {
   const path = window.location.pathname;
   const hideHeaderAndFooter = path === "/login" || path === "/register";
+
   return (
     <div className="App">
-      <Router>
+     <Router>
        <AppHeader />
         <Routes>
           <Route path="/" element={<MainPage />} />
@@ -32,6 +33,7 @@ function App() {
         </Routes>
         {!hideHeaderAndFooter && <AppFooter />}
       </Router>
+
     </div>
   );
 }

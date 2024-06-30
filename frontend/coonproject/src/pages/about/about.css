@@ -1,0 +1,91 @@
+/* Блок 1 */
+.about-page{
+    display: flex;
+    background-image: url(/src/imgs/line.png);
+    background-size: cover;
+    background-position: center;
+    height: 700px;
+    align-items: center;
+    position: relative;
+}
+.about-page_content{
+    position: relative;
+    display: flex;
+    max-width: 100%;
+    padding-left: 12.75rem;
+    padding-right: 12.75rem;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+.about-page_container{
+    color: #000;
+    text-align: left;
+    max-width: 899px;
+    align-items: center;
+    justify-content: center;
+
+}
+.about-page_container h1{
+    font-size: 4rem;
+    font-family: "Inter", sans-serif;
+    margin-bottom: 30px;
+    font-weight: 400;
+    margin-top: 0;
+}
+.about-page_container p{
+    font-size: 1.5rem;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    margin-top: 0;
+}
+.explane{
+    font-size: 1.5rem;
+    font-family: "Inter", sans-serif;
+}
+/* Блок 2 */
+.content-page{
+    display: flex;
+    background-color: #DCF5FE;
+    background-size: cover;
+    background-position: center;
+    height: 521px;
+    align-items: center;
+    position: relative;
+}
+.content-page_content{
+    position: relative;
+    display: flex;
+    max-width: 100%;
+    padding-left: 12.75rem;
+    padding-right: 12.75rem;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+.content-page_container{
+    color: #000;
+    text-align: left;
+    max-width: 1103px;
+    align-items: center;
+    justify-content: center;
+
+}
+.content-page_container h1{
+    font-size: 4rem;
+    font-family: "Inter", sans-serif;
+    margin-bottom: 30px;
+    font-weight: 400;
+    margin-top: 0;
+}
+.content-page_container p{
+    font-size: 1.5rem;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    margin-top: 0;
+}
+.explane-page{
+    font-size: 1.5rem;
+    font-family: "Inter", sans-serif;
+}
+/* Блок 3 Каталог */

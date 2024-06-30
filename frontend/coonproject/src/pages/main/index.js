@@ -10,7 +10,6 @@ import Baner1 from '../../imgs/Baner1.png'
 import Baner2 from '../../imgs/Baner2.png'
 import Baner3 from '../../imgs/Baner3.png'
 import Button from '../../imgs/Button.png'
-import AppFooter from "../../components/app-footer";
 
 function MainPage() {
   return (<>

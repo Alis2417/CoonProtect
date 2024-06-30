@@ -49,7 +49,7 @@ function ProfileCard() {
                   <a href="#" class="change-password">Изменить пароль</a>
                   </div>
 
-                  <div className="buttons" type="submit">
+                  <div className="button-clic" type="submit">
           <button className="secondary">Сохранить</button>
         </div>
 
