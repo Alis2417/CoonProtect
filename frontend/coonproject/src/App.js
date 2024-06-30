@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-      {!hideHeaderAndFooter && <AppHeader />}
+       <AppHeader />
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/courses" element={<CoursesPage />} />
