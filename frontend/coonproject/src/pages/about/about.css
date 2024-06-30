@@ -89,3 +89,25 @@
     font-family: "Inter", sans-serif;
 }
 /* Блок 3 Каталог */
+.courses-page-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 12.75rem;
+    padding-right: 12.75rem;
+
+}
+.courses-page__title{
+    
+}
+.courses-page__title h1{
+    font-size: 4rem;
+    margin-bottom: 1.875rem;
+    font-weight: 400;
+    margin-top: 0;
+    flex-basis: 49.8125rem;
+}
+.courses-page__title{
+    
+
+}
