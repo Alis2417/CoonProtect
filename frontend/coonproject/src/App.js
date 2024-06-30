@@ -1,6 +1,5 @@
-
 import './App.css';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainPage from './pages/main';
 import AppHeader from './components/app-header';
 import AppFooter from './components/app-footer';
@@ -14,55 +13,26 @@ import ProfilePage from './pages/profile';
 import KeisPage from './pages/keis';
 
 function App() {
-  const router =  createBrowserRouter([
-    {
-      path: "/",
-      children: [
-        {
-          path: "",
-          element: <MainPage />,
-        },
-        {
-          path: "courses",
-          element: <CoursesPage/>,
-        },
-        {
-          path: "news",
-          element: <NewsPage />,
-        },
-        {
-          path: "about",
-          element: <AboutPage />,
-        },
-        {
-          path: "contacts",
-          element: <ContactsPage />,
-        },
-        {
-          path: "login",
-          element: <LoginPage />,
-        },
-        {
-          path: "register",
-          element: <RegisterPage />,
-        },
-        {
-          path: "profile",
-          element: <ProfilePage />,
-        },
-        {
-          path: "keis",
-          element: <KeisPage />,
-        },
-      ],
-    },
-  ]);
+  const path = window.location.pathname;
+  const hideHeaderAndFooter = path === "/login" || path === "/register";
 
   return (
     <div className="App">
-      <AppHeader></AppHeader>
-      <RouterProvider router={router} />
-      <AppFooter></AppFooter>
+      <Router>
+      {!hideHeaderAndFooter && <AppHeader />}
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/courses" element={<CoursesPage />} />
+          <Route path="/news" element={<NewsPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contacts" element={<ContactsPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/keis" element={<KeisPage />} />
+        </Routes>
+        {!hideHeaderAndFooter && <AppFooter />}
+      </Router>
     </div>
   );
 }

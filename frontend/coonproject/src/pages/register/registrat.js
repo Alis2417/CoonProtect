@@ -29,12 +29,12 @@ const handleSubmit = (event) => {
 
 }
     return (
-        <div class="register-page">
+        <div className="register-page">
       <form className="register-form" onSubmit={handleSubmit} >
         <img src={logo} className="login-form__logo"/>
         <h2>Регистрация</h2>
         <label>Введите данные по форме ниже</label>
-        <div class="register-form__inputs">
+        <div className="register-form__inputs">
             <label>Имя пользователя*</label>
             <input name='name' onChange={handleInput}></input>
             {errors.name && <span className='text-danger'> {errors.name} </span>}
@@ -52,7 +52,7 @@ const handleSubmit = (event) => {
             
         </div>
         <p>Нажимая кнопку «Зарегистрироваться» вы даёте согласие на обработку своих персональных данных</p>
-        <button type='submit' class="register-form__button-submit">Зарегистрироваться</button>
+        <button type='submit' className="register-form__button-submit">Зарегистрироваться</button>
       </form>
       </div>
     );

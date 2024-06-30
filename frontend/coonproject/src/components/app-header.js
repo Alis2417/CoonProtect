@@ -6,7 +6,7 @@ function AppHeader() {
         <header className="app-header">
             <div className="app-header__menu">
                 <a href="/">
-                    <img  src={logo} alt="Logo" class="app-header__logo" />
+                    <img  src={logo} alt="Logo" className="app-header__logo" />
                 </a>
                 <nav className="app-header__navigation">
                     <a href="courses">Курсы</a>
