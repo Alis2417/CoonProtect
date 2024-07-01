@@ -11,7 +11,7 @@ function AppFooter() {
             <p>
             Чтобы не пропускать ничего важного ты можешь зарегистрироваться и конечно же пройти курсы, которые тебе помогут правильно подойти к безопасности своих конфиденциальных данных и уберечь их от мошенников
             </p>
-            <button className="register-button">Зарегистрироваться</button>
+            <button className="register-button"><a href="/register">Зарегистрироваться</a></button>
         </div>
         <div className="footer-bottom">
         

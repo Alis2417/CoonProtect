@@ -3,6 +3,7 @@ import logo from '../../imgs/LogoWithoutColor.png';
 import Validation from './registratValidation.js';
 import React, { useState } from "react";
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
 
 function RegisterPage() {
   const [values, setValues] = useState({
@@ -11,7 +12,7 @@ function RegisterPage() {
     password: '',
     password_re: ''
 })
-
+const navigate = useNavigate();
 const [errors, setErrors] = useState({})
 
 const handleInput = (event) => {
@@ -23,7 +24,10 @@ const handleSubmit = (event) => {
     setErrors(Validation(values));
     if(errors.name === "" && errors.email === "" && errors.password === "" && errors.password_re === "") {
         axios.post('http://localhost:8081/registrat', values)
-        .then(res => console.log(res))
+        .then(res => {
+          navigate('/login');
+
+        })
         .catch(err => console.log(err));
     }
 
@@ -32,7 +36,7 @@ const handleSubmit = (event) => {
         <div className="register-page">
       <form className="register-form" onSubmit={handleSubmit} >
         <img src={logo} className="login-form__logo"/>
-        <h2>Регистрация</h2>
+        <h2>Регистрация</h2> 
         <label>Введите данные по форме ниже</label>
         <div className="register-form__inputs">
             <label>Имя пользователя*</label>

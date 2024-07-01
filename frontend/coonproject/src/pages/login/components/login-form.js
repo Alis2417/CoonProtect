@@ -2,12 +2,15 @@ import './login-form.css';
 import logo from '../../../imgs/LogoWithoutColor.png';
 import Validation from './loginValidation.js';
 import React, { useState } from "react";
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
 
 function LoginForm() {
     const [values, setValues] = useState({
         name: '', 
         password: ''
     })
+    const navigate = useNavigate();
 
     const [errors, setErrors] = useState({})
 
@@ -18,6 +21,18 @@ function LoginForm() {
     const handleSubmit = (event) => {
         event.preventDefault();
         setErrors(Validation(values));
+        if(errors.name === "" && errors.password === "") {
+            axios.post('http://localhost:8081/login', values)
+            .then(res => {
+              if(res.data === "Success") {
+                navigate('/profile')
+              } else{
+                alert("No record existed");
+              }
+    
+            })
+            .catch(err => console.log(err));
+        }
 
     }
 

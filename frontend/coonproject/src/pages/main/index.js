@@ -30,8 +30,8 @@ function MainPage() {
           <li>повышай свой уровень и применяй на практике</li>
         </ul>
         <div className="buttons">
-          <button className="primary-btn">Пройти курс</button>
-          <button className="secondary-btn">Зарегистрироваться</button>
+          <button className="primary-btn"><a href="about">Пройти курс</a></button>
+          <button className="secondary-btn"> <a href="/register">Зарегистрироваться</a></button>
         </div>
       </div>
       <div className="image-content">

@@ -9,7 +9,7 @@ function ProfileCard() {
                   <img src={Profile} alt="Profile" className="profile-card__logo"></img>
                   <div class="profile-info">
                 <p>Кристина</p>
-                <p>ID: 1797364821</p>
+                <p>ID: 001</p>
             </div>
                 </div>
                 <div className="profile-card__form">

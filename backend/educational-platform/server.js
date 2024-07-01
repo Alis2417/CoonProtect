@@ -14,7 +14,7 @@ const db = mysql.createConnection({
 
 })
 
-app.post('/coonprotect', (req, res) => {
+app.post('/registrat', (req, res) => {
     const sql = "INSERT INTO login (`name`, `email`, `password`, `password_re`) VALUES (?)";
     const values = [
         req.body.name,
@@ -27,6 +27,21 @@ app.post('/coonprotect', (req, res) => {
             return res.json("Error");
         }
         return res.json(data);
+    })
+})
+
+app.post('/login', (req, res) => {
+    const sql = "SELECT * FROM login WHERE `name` = ? AND `password` = ?";
+    db.query(sql, [req.body.name, req.body.password], (err, data) => {
+        if(err) {
+            return res.json("Error");
+        }
+        if(data.length > 0) {
+            return res.json("Success");
+        }
+        else {
+            return res.json("Faile");
+        }
     })
 })
 

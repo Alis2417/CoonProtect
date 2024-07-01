@@ -38,6 +38,10 @@
     margin-top: 3.75rem;
     margin-top: 0;
 }
+.register-button a{
+    color: #fff;
+
+}
 
 .footer-bottom {
     height: 108px;

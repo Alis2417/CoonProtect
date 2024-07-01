@@ -97,9 +97,6 @@
     padding-right: 12.75rem;
 
 }
-.courses-page_cons{
-    display: flex;
-}
 .courses-page_ed{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
