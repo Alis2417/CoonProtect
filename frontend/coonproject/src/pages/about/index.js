@@ -41,8 +41,8 @@ function  AboutPage() {
             </div>
 
 
-            <div className='courses-page-container_'>
-              <div className='courses-page-container_'>
+            <div className='courses-page_const'>
+              <div className='courses-page_ed'>
               {courses.map(course => (
                 <div className="courses-page-card__row" key={course.id}>
                     <CourseCard
